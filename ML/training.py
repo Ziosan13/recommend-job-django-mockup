@@ -9,7 +9,11 @@ from transformers import BertTokenizer, BertForSequenceClassification, Trainer, 
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 #データ読み込み
-df=pd.read_csv('/workdir/ML/ijin.csv',index_col=0,encoding='utf-8')
+df=pd.read_csv('/workspace/ML/ijin.csv',index_col=0,encoding='utf-8')
+def to_str(df):
+    return str(df['text'])
+df['text']=df.apply(to_str,axis=1)
+
 df=df.reset_index()
 df=df.drop(['index'],axis=1)
 df.head()
@@ -88,6 +92,6 @@ trainer.train()
 
 
 #モデル保存
-save_directory='/workdir/instant-django/app/pretrained'
+save_directory='/workspace/instant-django/app/pretrained'
 tokenizer.save_pretrained(save_directory)
 model.save_pretrained(save_directory)

@@ -32,5 +32,5 @@ for i, urlrange in enumerate(urlrange_list):
         'label': [i for j in range(len(title_category))]
         })
 
-    df_category=df_category.apply(Preprocess_df,axis=1)
+    df_category['text']=df_category.apply(Preprocess_df,axis=1)
     df_category.to_csv('/workspace/WebScraping/csv/'+category_list[i]+'.csv')
