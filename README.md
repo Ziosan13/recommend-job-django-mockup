@@ -25,8 +25,21 @@ python manage.py createsuperuser
 ```
 ## 各ステップの説明
 ### スクレイピング
+```
+cd /workspace/WebScraping
+python WebScraping.py #実行時間かなり長め
+python IntegrateCSV.py
+```
 
 ### BERTで機械学習
+```
+cd /workspace/ML
+python training.py
+```
 
-### フロントエンドに適用 
+### フロントエンドに適用
+```
+cd /workspace/instant-django
+python manage.py runserver
+``` 
 
