@@ -1,7 +1,7 @@
 #ライブラリ
-from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments, pipeline
+from transformers import BertTokenizer, BertForSequenceClassification, pipeline
 
-sentence='私は将来革命を行いたいと考えております。' #ここを上手く繋げられるようにしたいです。文字制限は512文字以内です。
+#文字制限は512文字以内です。
 
 def AI(sentence):
     
@@ -13,7 +13,6 @@ def AI(sentence):
     sentiment_analyzer = pipeline("text-classification", model=model.to('cpu'), tokenizer=tokenizer)
     label=int(sentiment_analyzer(sentence)[0]['label'][-1])
     
-    #このanswerを表示できるようにしたいです。
     if label==0:
         answer='あなたは藤原氏タイプです！'
     elif label==1:
