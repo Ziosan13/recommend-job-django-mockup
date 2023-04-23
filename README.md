@@ -22,6 +22,7 @@ docker build . -t recommend-job
 
 コンテナイメージが立ち上がった後
 ```
+mkdir WebScraping/csv
 cd WebScraping/csv
 docker run -v `pwd`:/workspace/WebScraping/csv --name mockup -itd recommend-job
 ```
