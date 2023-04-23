@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import torch
-from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments, pipeline
+from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments 
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 #データ読み込み
@@ -66,25 +66,25 @@ def compute_metrics(pred):
     }
 
 training_args = TrainingArguments(
-    output_dir='./results',          # output directory
-    num_train_epochs=1,              # total number of training epochs
-    per_device_train_batch_size=4,  # batch size per device during training
-    per_device_eval_batch_size=4,   # batch size for evaluation
-    warmup_steps=500,                # number of warmup steps for learning rate scheduler
-    weight_decay=0.01,               # strength of weight decay
-    save_total_limit=1,              # limit the total amount of checkpoints. Deletes the older checkpoints.
-    dataloader_pin_memory=False,  # Whether you want to pin memory in data loaders or not. Will default to True
+    output_dir='./results',          # 結果を出力するディレクトリ
+    num_train_epochs=1,              # 学習回数の変更、計算資源が潤沢にある場合は変更を推奨
+    per_device_train_batch_size=4,   # トレーニング中のバッチサイズ
+    per_device_eval_batch_size=4,    # 評価中のバッチサイズ
+    warmup_steps=500,                # スケジューラーの学習率の初期値を設定するステップ数
+    weight_decay=0.01,               
+    save_total_limit=1,              
+    dataloader_pin_memory=False,  
     evaluation_strategy="steps",
     logging_steps=50,
     logging_dir='./logs'
 )
 
 trainer = Trainer(
-    model=model,                         # the instantiated 🤗 Transformers model to be trained
-    args=training_args,                  # training arguments, defined above
-    train_dataset=train_dataset,         # training dataset
-    eval_dataset=eval_dataset,             # evaluation dataset
-    compute_metrics=compute_metrics  # The function that will be used to compute metrics at evaluation
+    model=model,                         # モデルの指定
+    args=training_args,                  # パラメータの指定
+    train_dataset=train_dataset,         # 学習用データセットの指定
+    eval_dataset=eval_dataset,           # 評価用データセットの指定
+    compute_metrics=compute_metrics      # 評価に使う関数の指定
 )
 
 trainer.train()
