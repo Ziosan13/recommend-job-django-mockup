@@ -1,7 +1,5 @@
 from django.db import models
-
 from users.models import User
-
 
 class Item(models.Model):
     """
@@ -33,29 +31,6 @@ class Item(models.Model):
         blank=True,
         null=True,
     )
-
-    '''
-    # サンプル項目4 浮動小数点
-    sample_4 = models.FloatField(
-        verbose_name='サンプル項目4 浮動小数点',
-        blank=True,
-        null=True,
-    )
-
-    # サンプル項目5 固定小数点
-    sample_5 = models.DecimalField(
-        verbose_name='サンプル項目5 固定小数点',
-        max_digits=5,
-        decimal_places=2,
-        blank=True,
-        null=True,
-    )
-
-    # サンプル項目6 ブール値
-    sample_6 = models.BooleanField(
-        verbose_name='サンプル項目6 ブール値',
-    )
-    '''
 
     # サンプル項目7 日付
     sample_7 = models.DateField(
