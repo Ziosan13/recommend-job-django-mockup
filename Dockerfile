@@ -21,7 +21,6 @@ COPY WebScraping/ /workspace/WebScraping/
 RUN git clone https://github.com/okoppe8/instant-django.git && \
     cd instant-django && \
     pip install -r requirements.txt && \
-    mv /code/django/ai.py /workspace/instant-django/app/ai.py && \
     mv /code/django/views.py /workspace/instant-django/app/views.py && \
     mv /code/django/models.py /workspace/instant-django/app/models.py && \
     mv /code/django/inference.py /workspace/instant-django/app/inference.py && \
