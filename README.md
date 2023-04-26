@@ -14,8 +14,8 @@
 
 ## セットアップ
 ### コンテナの立ち上げ
-このリポジトリの階層に移動した後
 ```
+cd recommend-job-django-mockup
 docker build . -t recommend-job
 ```
 
