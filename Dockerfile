@@ -27,3 +27,4 @@ RUN git clone https://github.com/okoppe8/instant-django.git && \
     mv /code/django/templates/app/item_detail_contents.html /workspace/instant-django/app/templates/app/item_detail_contents.html && \
     mv /code/django/templates/app/item_filter.html /workspace/instant-django/app/templates/app/item_filter.html && \
     python manage.py makemigrations && \
+    python manage.py migrate
