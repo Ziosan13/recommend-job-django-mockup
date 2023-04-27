@@ -19,13 +19,18 @@ urlrange_list=[[18,22],[24,61],[24,31],[24,34],[13,21],[25,35]]
 
 #カテゴリごとにスクレイピング
 for i, urlrange in enumerate(urlrange_list):
+    print('-------------------start scraping for'+category_list[i]+'-------------------')
     category='https://ja.wikipedia.org'+url_parent[category_num[i]].get('href')
     soup_category=getSoup(category)
     urllist_category=getURLlist(soup_category[urlrange[0]:urlrange[1]]) #getURLlistの引数は、該当する部分だけを自分で調べる
     
+    print('-------------------extracting sentence-------------------')
     text_category, title_category=extractSentence(urllist_category) #元データから名前と説明文を抽出
+    
+    print('-------------------concatenating sentence-------------------')
     exp_category=concatSentence(text_category) #各人物に対して一つの文章になるようにリスト内の文章を全結合
-
+    
+    print('-------------------creating csv file-------------------')
     df_category=pd.DataFrame(data={
         'name':title_category,
         'text':exp_category,

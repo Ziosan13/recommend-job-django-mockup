@@ -1,4 +1,5 @@
 import requests
+from tqdm import tqdm
 from bs4 import BeautifulSoup
 
 def getSoup(url):
@@ -21,7 +22,7 @@ def getURLlist(soup):
 def extractSentence(url_list):
     text_lists=[]
     title_lists=[]
-    for url in url_list:
+    for url in tqdm(url_list):
         url='https://ja.wikipedia.org'+str(url)
         tmp_r = requests.get(url)
         tmp_r.encoding = tmp_r.apparent_encoding
@@ -34,7 +35,7 @@ def extractSentence(url_list):
 #それぞれの人物で文章を結合
 def concatSentence(text_lists):
     exp_list=[]
-    for text_list in text_lists:
+    for text_list in tqdm(text_lists):
         tmp_text=''
         for text in text_list:
             tmp_text=tmp_text+text.get_text()

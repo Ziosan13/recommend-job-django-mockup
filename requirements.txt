@@ -6,3 +6,4 @@ transformers==4.28.1
 torch==2.0.0
 matplotlib==3.7.1
 pandas==2.0.0
+tqdm==4.62.3
