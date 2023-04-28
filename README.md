@@ -36,7 +36,7 @@ python manage.py createsuperuser
 ### スクレイピング
 ```
 cd /workspace/WebScraping
-python WebScraping.py #実行時間がかなり長いので注意
+python WebScraping.py #実行時間が30分近くかかるので注意
 python IntegrateCSV.py
 ```
 
