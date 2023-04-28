@@ -19,7 +19,7 @@ urlrange_list=[[18,22],[24,61],[24,31],[24,34],[13,21],[25,35]]
 
 #カテゴリごとにスクレイピング
 for i, urlrange in enumerate(urlrange_list):
-    print('-------------------start scraping for'+category_list[i]+'-------------------')
+    print('-------------------start scraping for '+category_list[i]+'-------------------')
     category='https://ja.wikipedia.org'+url_parent[category_num[i]].get('href')
     soup_category=getSoup(category)
     urllist_category=getURLlist(soup_category[urlrange[0]:urlrange[1]]) #getURLlistの引数は、該当する部分だけを自分で調べる

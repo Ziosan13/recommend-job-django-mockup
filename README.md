@@ -36,14 +36,14 @@ python manage.py createsuperuser
 ### スクレイピング
 ```
 cd /workspace/WebScraping
-python WebScraping.py #実行時間かなり長め
+python WebScraping.py #実行時間がかなり長いので注意
 python IntegrateCSV.py
 ```
 
 ### BERTで機械学習
 ```
 cd /workspace/ML
-python training.py
+python train.py
 ```
 
 ### フロントエンドに適用
