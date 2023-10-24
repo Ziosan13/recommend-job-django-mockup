@@ -11,6 +11,9 @@
 - Wikipediaで公開されている、日本の歴史上の人物を学習データとして、記入したプロフィールが歴史上の人物のどのタイプに近いのかを提示してくれる
 - フロント機能の実装
 
+### 発表の様子
+- [予選](https://www.youtube.com/watch?v=-7KI4CvJndo&t=1s)
+- [決勝(0:40から 3分ほど)](https://www.youtube.com/watch?v=tLnDydUft-4&t=203s)
 
 ## セットアップ
 ### コンテナの立ち上げ
